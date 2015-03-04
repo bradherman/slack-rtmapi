@@ -107,6 +107,17 @@ class SlackRTM
       sleep 0.1
     end
 
+    def single_send
+      init
+      count = 0
+      loop do
+        count += 1
+        inner_loop
+
+        exit if count > 1
+      end
+    end
+
     # A dumb simple main loop.
     def main_loop
       init
