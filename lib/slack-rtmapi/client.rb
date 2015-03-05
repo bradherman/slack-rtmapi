@@ -110,11 +110,9 @@ class SlackRTM
     def single_send
       init
       count = 0
-      loop do
+      while count < 2 do
         count += 1
         inner_loop
-
-        exit if count > 1
       end
     end
 
